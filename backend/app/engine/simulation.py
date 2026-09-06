@@ -178,12 +178,10 @@ class SimulationEngine:
         except Exception:
             pass
 
-
-            
-            msg = f"Tick {self.current_tick}: {tick_summary['transactions']} txns, {tick_summary['bankruptcies']} bankruptcies"
-            logger.info(msg)
-            print(msg, flush=True)
-            return tick_summary
+        msg = f"Tick {self.current_tick}: {tick_summary['transactions']} txns, {tick_summary['bankruptcies']} bankruptcies"
+        logger.info(msg)
+        print(msg, flush=True)
+        return tick_summary
     
     async def _update_markets(self, session: AsyncSession):
         """Обновить рыночные цены на основе supply/demand."""
